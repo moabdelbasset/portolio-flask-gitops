@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: portfolio-development
+
+resources:
+  - ../../base
+
+images:
+  - name: quay.io/moabdelbasset/portolio-flask
+    digest: sha256:0a74a984dc17d241bcc50be54a8d62a5b8bb02b047ce8c0ebc6d07e09ed815b7
+
+patches:
+  - target:
+      group: route.openshift.io
+      version: v1
+      kind: Route
+      name: portfolio
+    patch: |-
+      - op: add
+        path: /spec/host
+        value: portfolio-development.apps.ocp-lab.aymantech.net
