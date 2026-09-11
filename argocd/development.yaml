@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: portfolio-development
+  namespace: openshift-gitops
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/moabdelbasset/portolio-flask-gitops.git
+    targetRevision: main
+    path: overlays/development
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: portfolio-development
