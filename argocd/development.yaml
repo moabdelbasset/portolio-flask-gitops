@@ -5,6 +5,10 @@ metadata:
   namespace: openshift-gitops
 spec:
   project: default
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: false
 
   source:
     repoURL: https://github.com/moabdelbasset/portolio-flask-gitops.git
