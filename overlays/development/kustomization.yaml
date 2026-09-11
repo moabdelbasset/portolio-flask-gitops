@@ -8,7 +8,7 @@ resources:
 
 images:
   - name: quay.io/moabdelbasset/portolio-flask
-    digest: sha256:0a74a984dc17d241bcc50be54a8d62a5b8bb02b047ce8c0ebc6d07e09ed815b7
+    digest: sha256:85e7a1936b2a3d90cb2b681f0cfa916d9e47458509b7705d92ba6b9a70bf0f26
 
 patches:
   - target:
